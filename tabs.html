@@ -1,0 +1,253 @@
+<html>
+<head>
+<style type="text/css">
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.js" type="text/javascript"></script>
+<link rel="stylesheet" href="http://jqueryui.com/themes/base/jquery.ui.all.css" type="text/css" />
+<style type="text/css">
+
+label {
+	width: 100px;
+	font-style: italic;
+}
+
+input {
+	width: 10cm;
+}
+
+select {
+	width: 10cm;
+}
+
+#tabs-nested > .ui-tabs-panel {
+	padding: 0em;
+}
+
+#tabs-nested-left-claim1 {
+	position: relative;
+	padding-left: 6.5em;
+}
+#tabs-nested-left-claim1 .ui-tabs-nav {
+	position: absolute;
+	left: 0.25em;
+	top: 0.25em;
+	bottom: 0.25em;
+	width: 6em;
+	padding: 0.2em 0 0.2em 0.2em;
+}
+#tabs-nested-left-claim1 .ui-tabs-nav li {
+	right: 1px;
+	width: 100%;
+	border-right: none;
+	border-bottom-width: 1px !important;
+	-moz-border-radius: 9px 0px 0px 9px;
+	-webkit-border-radius: 9px 0px 0px 9px;
+	border-radius: 9px 0px 0px 9px;
+	overflow: hidden;
+}
+#tabs-nested-left-claim1 .ui-tabs-nav li.ui-tabs-selected {
+	border-right: 1px solid transparent;
+}
+#tabs-nested-left-claim1 .ui-tabs-nav li a {
+	float: right;
+	width: 100%;
+	text-align: right;
+}
+#tabs-nested-left-claim1 > div {
+	height: 30em;
+	overflow: auto;
+}
+
+
+#tabs-nested-left-claim2 {
+	position: relative;
+	padding-left: 6.5em;
+}
+#tabs-nested-left-claim2 .ui-tabs-nav {
+	position: absolute;
+	left: 0.25em;
+	top: 0.25em;
+	bottom: 0.25em;
+	width: 6em;
+	padding: 0.2em 0 0.2em 0.2em;
+}
+#tabs-nested-left-claim2 .ui-tabs-nav li {
+	right: 1px;
+	width: 100%;
+	border-right: none;
+	border-bottom-width: 1px !important;
+	-moz-border-radius: 9px 0px 0px 9px;
+	-webkit-border-radius: 9px 0px 0px 9px;
+	border-radius: 9px 0px 0px 9px;
+	overflow: hidden;
+}
+#tabs-nested-left-claim2 .ui-tabs-nav li.ui-tabs-selected {
+	border-right: 1px solid transparent;
+}
+#tabs-nested-left-claim2 .ui-tabs-nav li a {
+	float: right;
+	width: 100%;
+	text-align: right;
+}
+#tabs-nested-left-claim2 > div {
+	height: 30em;
+	overflow: auto;
+}
+
+</style>
+</head>
+
+<body>
+<div class="header">
+header blablabla
+</div>
+<div id="tabs-nested">
+	<ul>
+		<li><a href="#tabs-nested-1">Claim 00100</a></li>
+		<li><a href="#tabs-nested-2">Claim 00200</a></li>
+	</ul>
+
+	<div id="tabs-nested-1">
+		<div id="tabs-nested-left-claim1">
+			<!-- claim 0010 -->
+			<ul>
+				<li><a href="#tabs-nested-left-claim1-1">Main</a></li>
+				<li><a href="#tabs-nested-left-claim1-2">Description</a></li>
+				<li><a href="#tabs-nested-left-claim1-3">PaOpSu</a></li>
+				<li><a href="#tabs-nested-left-claim1-4">Messages</a></li>
+			</ul>
+			<div id="tabs-nested-left-claim1-1">
+				<h3>Main information</h3>
+				<div>claim 0010</div>
+				<div>
+				<form>
+					<label>Scope</label>
+					<select>
+						<option value=" ">Warranty</option>
+					</select><br/>
+					<label>Warranty Type</label>
+						<select>
+							<option value=" ">Basic warranty type</option>
+						</select><br/>
+					<label>Application Type</label>
+					<select>
+						<option value=" "/>claim</option>
+					</select><br/>
+					<label>VIN</label><input type="text" name="f1" /><br/>
+					<label>Registration date</label><input type="text" name="f2" /><br/>
+					<label>Repair date</label><input type="text" name="f2" /><br/>
+					<label>Mileage</label><input type="text" name="f2" />
+						<select style="width: 2cm">
+							<option>KM</option>
+							<option>Mile</option>
+						</select><br/>
+					<label>Repair order No</label><input type="text" name="f2" /><br/>
+				</form>
+				</div>
+			</div>
+			<div id="tabs-nested-left-claim1-2">
+				<h3>Description</h3>
+				<form>
+					<fieldset>
+					<label for="assembly">Assembly</label>
+					<select id="assembly">
+						<option>F - Fuel and Emission Control System</option>
+					</select>
+					<label for="subassembly">Subassembly</label>
+					<select id="subassembly">
+						<option>F00 - Diagnosis</option>
+					</select>
+					<label for="symptom">Symptom</label>
+					<select id="symptom">
+						<option>01 - Engine does not start</option>
+					</select>
+					<label for="damage">Damage</label>
+					<select id="damage">
+						<option>91 - Oil/grease leak</option>
+					</select>
+					</fieldset>
+				</form>
+				<ul>
+					<li>DTC1</li>
+					<li>DTC2</li>
+					<li>DTC3</li>
+				</ul>
+				<button value="Add">Add</button>
+				<button value="Delete">Delete</button>
+				<button value="">Set causal part</button>
+				<form>
+					<label>condition.txt</label>
+					<textarea name="condition"></textarea>
+					<label>remedy.txt</label>
+					<textarea name="remedy"></textarea>
+				</form>
+				<ul class="locationCodeList">
+					<li>FRT</li>
+					<li>ALL</li>
+				</ul>
+				<button value="Delete">Delete</button>
+				<button value="Remove all">Remove all</button>
+				
+			</div>
+			<div id="tabs-nested-left-claim1-3">
+				<h3>Parts, Operations, Sublets</h3>
+			</div>
+			<div id="tabs-nested-left-claim1-4">
+				<h3>Messages</h3>
+			</div>
+		</div>
+	</div>
+
+	<div id="tabs-nested-2">
+		<div id="tabs-nested-left-claim2">
+		<ul>
+			<li><a href="#tabs-nested-left-claim2-1">Main</a></li>
+			<li><a href="#tabs-nested-left-claim2-2">Description</a></li>
+			<li><a href="#tabs-nested-left-claim2-3">PaOpSu</a></li>
+			<li><a href="#tabs-nested-left-claim2-4">Messages</a></li>
+		</ul>
+
+		<div id="tabs-nested-left-claim2-1">
+			<h3>Main information</h3>
+			<div>
+			<div>claim 0020</div>
+			<form>
+				<label>VIN</label><input type="text" name="f1" /><br/>
+				<label>repair date</label><input type="text" name="f2" /><br/>
+				<label>field3</label><input type="text" name="f3" /><br/>
+				<input type="submit" />
+			</form>
+			</div>
+			<div>a2 some info</div>
+			<div>a3 some info</div>
+		</div>
+		<div id="tabs-nested-left-claim2-2">
+			<h3>Description</h3>
+			<div>b1 some info</div>
+			<div>b2 some info</div>
+			<div>b3 some info</div>
+		</div>
+		<div id="tabs-nested-left-claim2-3">
+			<h3>Parts, Operations, Sublets</h3>
+			<div>c1 some info</div>
+			<div>c2 some info</div>
+			<div>c3 some info</div>
+		</div>
+		<div id="tabs-nested-left-claim2-4">
+			<h3>Messages</h3>
+		</div>
+	</div>
+</div>
+<div class="footer">
+footer info
+</div>
+<script type="text/javascript">
+$(document).ready(function() {
+	$("#tabs-nested").tabs();
+	$("#tabs-nested-left-claim1").tabs();
+	$("#tabs-nested-left-claim2").tabs();
+});
+</script>
+</body>
+</html>
