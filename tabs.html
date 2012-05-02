@@ -8,8 +8,9 @@
 <style type="text/css">
 
 label {
-	width: 100px;
+	width: 180px;
 	font-style: italic;
+	display: inline-block;
 }
 
 input {
@@ -100,7 +101,7 @@ select {
 
 <body>
 <div class="header">
-header blablabla
+header blablabla, menu stuff, messages ?
 </div>
 <div id="tabs-nested">
 	<ul>
@@ -122,21 +123,24 @@ header blablabla
 				<div>claim 0010</div>
 				<div>
 				<form>
-					<label>Scope</label>
-					<select>
+					<label for="scope">Scope</label>
+					<select id="scope">
 						<option value=" ">Warranty</option>
 					</select><br/>
-					<label>Warranty Type</label>
-						<select>
+					<label for="warrantyType">Warranty Type</label>
+						<select id="warrantyType">
 							<option value=" ">Basic warranty type</option>
 						</select><br/>
-					<label>Application Type</label>
-					<select>
+					<label for="applicationType">Application Type</label>
+					<select id="applicationType">
 						<option value=" "/>claim</option>
 					</select><br/>
-					<label>VIN</label><input type="text" name="f1" /><br/>
-					<label>Registration date</label><input type="text" name="f2" /><br/>
-					<label>Repair date</label><input type="text" name="f2" /><br/>
+					<label for="vin">VIN</label>
+					<input id="vin" type="text" name="f1" /><br/>
+					<label for="registrationDate">Registration date</label>
+					<input id="registrationDate" type="text" name="f2" /><br/>
+					<label for="repairDate" >Repair date</label>
+					<input id="repairDate" type="text" name="f2" /><br/>
 					<label>Mileage</label><input type="text" name="f2" />
 						<select style="width: 2cm">
 							<option>KM</option>
@@ -147,45 +151,59 @@ header blablabla
 				</div>
 			</div>
 			<div id="tabs-nested-left-claim1-2">
+				use JSON/REST to retrieve options?
 				<h3>Description</h3>
-				<form>
+				<form style="float: left">
 					<fieldset>
+					<div>
 					<label for="assembly">Assembly</label>
 					<select id="assembly">
 						<option>F - Fuel and Emission Control System</option>
+						<option>Y - Paint related stuff</option>
 					</select>
+					</div>
+					<div>
 					<label for="subassembly">Subassembly</label>
 					<select id="subassembly">
 						<option>F00 - Diagnosis</option>
 					</select>
+					</div>
+					<div>
 					<label for="symptom">Symptom</label>
 					<select id="symptom">
 						<option>01 - Engine does not start</option>
 					</select>
+					</div>
+					<div>
 					<label for="damage">Damage</label>
 					<select id="damage">
 						<option>91 - Oil/grease leak</option>
 					</select>
+					</div>
 					</fieldset>
 				</form>
-				<ul>
-					<li>DTC1</li>
-					<li>DTC2</li>
-					<li>DTC3</li>
-				</ul>
-				<button value="Add">Add</button>
-				<button value="Delete">Delete</button>
-				<button value="">Set causal part</button>
-				<form>
-					<label>condition.txt</label>
-					<textarea name="condition"></textarea>
-					<label>remedy.txt</label>
-					<textarea name="remedy"></textarea>
+				<select multiple="multiple" style="display: inline-block; width: 100px">
+					<option>DTC1</option>
+					<option>DTC2</option>
+					<option>DTC3</option>
+				</select>
+				<div style="width:150px; display: inline-block">
+				<button style="width: 100%" value="Add">Add</button><br/>
+				<button style="width: 100%" value="Delete">Delete</button>
+				<button style="width: 100%" value="">Set causal part</button>
+				</div>
+				<form style="float: left">
+					<div>
+					<label for="condition">condition.txt</label>
+					<textarea id="condition" style="display:inline-blockwidth; width:500px" name="condition"></textarea>
+					</div>
+					<label for="remedy">remedy.txt</label>
+					<textarea id="remedy" style="width: 500px; display: inline-block" name="remedy"></textarea>
 				</form>
-				<ul class="locationCodeList">
-					<li>FRT</li>
-					<li>ALL</li>
-				</ul>
+				<select multiple="multiple" class="locationCodeList">
+					<option>FRT - front stuff</option>
+					<option>ALL - everyting</option>
+				</select>
 				<button value="Delete">Delete</button>
 				<button value="Remove all">Remove all</button>
 				
@@ -240,13 +258,15 @@ header blablabla
 	</div>
 </div>
 <div class="footer">
-footer info
+footer info, date, user, language, machine, status, copyright, ..
 </div>
 <script type="text/javascript">
 $(document).ready(function() {
 	$("#tabs-nested").tabs();
 	$("#tabs-nested-left-claim1").tabs();
 	$("#tabs-nested-left-claim2").tabs();
+	$("#registrationDate").datepicker();
+	$("#repairDate").datepicker();
 });
 </script>
 </body>
