@@ -3,7 +3,7 @@ import json
 
 class MainPage(webapp2.RequestHandler):
   def get(self):
-      self.response.headers['Content-Type'] = 'text/plain'
+      self.response.headers['Content-Type'] = 'application/json'
       assembly = self.request.get('assembly')
       if assembly == 'A':
         list = [
@@ -26,7 +26,7 @@ class MainPage(webapp2.RequestHandler):
 
 class SymptomController(webapp2.RequestHandler):
   def get(self):
-      self.response.headers['Content-Type'] = 'text/plain'
+      self.response.headers['Content-Type'] = 'application/json'
       assembly = self.request.get('assembly')
       if assembly == 'A':
         list = [

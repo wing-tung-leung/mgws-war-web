@@ -267,7 +267,16 @@ $(document).ready(function() {
 	$("#tabs-nested-left-claim2").tabs();
 	$("#registrationDate").datepicker();
 	$("#repairDate").datepicker();
-});
+	$.getJSON("http://mgws-simple.appspot.com/subassemblies?jsoncallback=?",
+		{assembly: "A"},
+		function(data) {
+			alert(data);
+    			$.each(data, function(i,item){
+      				//$("<option/>").text(item.label).attr("value", item.code).appendTo("#subassembly");
+				alert(item);
+    			});
+		});
+	});
 </script>
 </body>
 </html>
