@@ -1,0 +1,293 @@
+<html>
+<head>
+<style type="text/css">
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.js" type="text/javascript"></script>
+<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/themes/base/jquery.ui.all.css" type="text/css" />
+<style type="text/css">
+
+label {
+	width: 180px;
+	font-style: italic;
+	display: inline-block;
+}
+
+input {
+	width: 10cm;
+}
+
+select {
+	width: 10cm;
+}
+
+#tabs-nested > .ui-tabs-panel {
+	padding: 0em;
+}
+
+#tabs-nested-left-claim1 {
+	position: relative;
+	padding-left: 6.5em;
+}
+#tabs-nested-left-claim1 .ui-tabs-nav {
+	position: absolute;
+	left: 0.25em;
+	top: 0.25em;
+	bottom: 0.25em;
+	width: 6em;
+	padding: 0.2em 0 0.2em 0.2em;
+}
+#tabs-nested-left-claim1 .ui-tabs-nav li {
+	right: 1px;
+	width: 100%;
+	border-right: none;
+	border-bottom-width: 1px !important;
+	-moz-border-radius: 9px 0px 0px 9px;
+	-webkit-border-radius: 9px 0px 0px 9px;
+	border-radius: 9px 0px 0px 9px;
+	overflow: hidden;
+}
+#tabs-nested-left-claim1 .ui-tabs-nav li.ui-tabs-selected {
+	border-right: 1px solid transparent;
+}
+#tabs-nested-left-claim1 .ui-tabs-nav li a {
+	float: right;
+	width: 100%;
+	text-align: right;
+}
+#tabs-nested-left-claim1 > div {
+	height: 30em;
+	overflow: auto;
+}
+
+
+#tabs-nested-left-claim2 {
+	position: relative;
+	padding-left: 6.5em;
+}
+#tabs-nested-left-claim2 .ui-tabs-nav {
+	position: absolute;
+	left: 0.25em;
+	top: 0.25em;
+	bottom: 0.25em;
+	width: 6em;
+	padding: 0.2em 0 0.2em 0.2em;
+}
+#tabs-nested-left-claim2 .ui-tabs-nav li {
+	right: 1px;
+	width: 100%;
+	border-right: none;
+	border-bottom-width: 1px !important;
+	-moz-border-radius: 9px 0px 0px 9px;
+	-webkit-border-radius: 9px 0px 0px 9px;
+	border-radius: 9px 0px 0px 9px;
+	overflow: hidden;
+}
+#tabs-nested-left-claim2 .ui-tabs-nav li.ui-tabs-selected {
+	border-right: 1px solid transparent;
+}
+#tabs-nested-left-claim2 .ui-tabs-nav li a {
+	float: right;
+	width: 100%;
+	text-align: right;
+}
+#tabs-nested-left-claim2 > div {
+	height: 30em;
+	overflow: auto;
+}
+
+</style>
+</head>
+
+<body>
+<div class="header">
+header blablabla, menu stuff, messages ?
+</div>
+<div id="tabs-nested">
+	<ul>
+		<li><a href="#tabs-nested-1">Claim 00100</a></li>
+		<li><a href="#tabs-nested-2">Claim 00200</a></li>
+	</ul>
+
+	<div id="tabs-nested-1">
+		<div id="tabs-nested-left-claim1">
+			<!-- claim 0010 -->
+			<ul>
+				<li><a href="#tabs-nested-left-claim1-1">Main</a></li>
+				<li><a href="#tabs-nested-left-claim1-2">Description</a></li>
+				<li><a href="#tabs-nested-left-claim1-3">PaOpSu</a></li>
+				<li><a href="#tabs-nested-left-claim1-4">Messages</a></li>
+			</ul>
+			<div id="tabs-nested-left-claim1-1">
+				<h3>Main information</h3>
+				<div>claim 0010</div>
+				<div>
+				<form>
+					<label for="scope">Scope</label>
+					<select id="scope">
+						<option value=" ">Warranty</option>
+					</select><br/>
+					<label for="warrantyType">Warranty Type</label>
+						<select id="warrantyType">
+							<option value=" ">Basic warranty type</option>
+						</select><br/>
+					<label for="applicationType">Application Type</label>
+					<select id="applicationType">
+						<option value=" "/>claim</option>
+					</select><br/>
+					<label for="vin">VIN</label>
+					<input id="vin" type="text" name="f1" /><br/>
+					<label for="registrationDate">Registration date</label>
+					<input id="registrationDate" type="text" name="f2" /><br/>
+					<label for="repairDate" >Repair date</label>
+					<input id="repairDate" type="text" name="f2" /><br/>
+					<label>Mileage</label><input type="text" name="f2" />
+						<select style="width: 2cm">
+							<option>KM</option>
+							<option>Mile</option>
+						</select><br/>
+					<label>Repair order No</label><input type="text" name="f2" /><br/>
+				</form>
+				</div>
+			</div>
+			<div id="tabs-nested-left-claim1-2">
+				use JSON/REST to retrieve options?
+				<h3>Description</h3>
+				<form style="float: left">
+					<fieldset>
+					<div>
+					<label for="assembly">Assembly</label>
+					<select id="assembly">
+						<option>F - Fuel and Emission Control System</option>
+						<option>Y - Paint related stuff</option>
+					</select>
+					</div>
+					<div>
+					<label for="subassembly">Subassembly</label>
+					<select id="subassembly">
+						<option>F00 - Diagnosis</option>
+					</select>
+					</div>
+					<div>
+					<label for="symptom">Symptom</label>
+					<select id="symptom">
+						<option>01 - Engine does not start</option>
+					</select>
+					</div>
+					<div>
+					<label for="damage">Damage</label>
+					<select id="damage">
+						<option>91 - Oil/grease leak</option>
+					</select>
+					</div>
+					</fieldset>
+				</form>
+				<select multiple="multiple" style="display: inline-block; width: 100px">
+					<option>DTC1</option>
+					<option>DTC2</option>
+					<option>DTC3</option>
+				</select>
+				<div style="width:150px; display: inline-block">
+				<button style="width: 100%" value="Add">Add</button><br/>
+				<button style="width: 100%" value="Delete">Delete</button>
+				<button style="width: 100%" value="">Set causal part</button>
+				</div>
+				<form style="float: left">
+					<div>
+					<label for="condition">condition.txt</label>
+					<textarea id="condition" style="display:inline-blockwidth; width:500px" name="condition"></textarea>
+					</div>
+					<label for="remedy">remedy.txt</label>
+					<textarea id="remedy" style="width: 500px; display: inline-block" name="remedy"></textarea>
+				</form>
+				<select multiple="multiple" class="locationCodeList">
+					<option>FRT - front stuff</option>
+					<option>ALL - everyting</option>
+				</select>
+				<button value="Delete">Delete</button>
+				<button value="Remove all">Remove all</button>
+				
+			</div>
+			<div id="tabs-nested-left-claim1-3">
+				<h3>Parts, Operations, Sublets</h3>
+			</div>
+			<div id="tabs-nested-left-claim1-4">
+				<h3>Messages</h3>
+			</div>
+		</div>
+	</div>
+
+	<div id="tabs-nested-2">
+		<div id="tabs-nested-left-claim2">
+		<ul>
+			<li><a href="#tabs-nested-left-claim2-1">Main</a></li>
+			<li><a href="#tabs-nested-left-claim2-2">Description</a></li>
+			<li><a href="#tabs-nested-left-claim2-3">PaOpSu</a></li>
+			<li><a href="#tabs-nested-left-claim2-4">Messages</a></li>
+		</ul>
+
+		<div id="tabs-nested-left-claim2-1">
+			<h3>Main information</h3>
+			<div>
+			<div>claim 0020</div>
+			<form>
+				<label>VIN</label><input type="text" name="f1" /><br/>
+				<label>repair date</label><input type="text" name="f2" /><br/>
+				<label>field3</label><input type="text" name="f3" /><br/>
+				<input type="submit" />
+			</form>
+			</div>
+			<div>a2 some info</div>
+			<div>a3 some info</div>
+		</div>
+		<div id="tabs-nested-left-claim2-2">
+			<h3>Description</h3>
+			<div>b1 some info</div>
+			<div>b2 some info</div>
+			<div>b3 some info</div>
+		</div>
+		<div id="tabs-nested-left-claim2-3">
+			<h3>Parts, Operations, Sublets</h3>
+			<div>c1 some info</div>
+			<div>c2 some info</div>
+			<div>c3 some info</div>
+		</div>
+		<div id="tabs-nested-left-claim2-4">
+			<h3>Messages</h3>
+		</div>
+	</div>
+</div>
+<div class="footer">
+footer info, date, user, language, machine, status, copyright, ..
+</div>
+<script type="text/javascript">
+$(document).ready(function() {
+	$("#tabs-nested").tabs();
+	$("#tabs-nested-left-claim1").tabs();
+	$("#tabs-nested-left-claim2").tabs();
+	$("#registrationDate").datepicker();
+	$("#repairDate").datepicker();
+	var jqxhr = $.getJSON("/subassemblies?assembly=A",
+		function() {
+			//alert('ok')
+		}
+	)
+	.success( function(data) {
+		$.each(data, function(i,item) {
+			$("<option/>").text(item.label).attr("value", item.code).appendTo("#subassembly");
+		})
+	})
+	.error( function() {
+		//alert("err")
+	})
+	.complete( function() {
+		//alert("complete")
+	});
+
+	jqxhr.complete( function() {
+		//alert ("complete2")
+	});
+});
+</script>
+</body>
+</html>
