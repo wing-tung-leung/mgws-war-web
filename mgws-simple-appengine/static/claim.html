@@ -4,7 +4,10 @@
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js" type="text/javascript"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.js" type="text/javascript"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.0/jquery.dataTables.js" type="text/javascript"></script>
 <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/themes/base/jquery.ui.all.css" type="text/css" />
+<link rel="stylesheet" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.0/css/jquery.dataTables.css" type="text/css" />
+<link rel="stylesheet" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.0/css/jquery.dataTables_themeroller.css" type="text/css" />
 <style type="text/css">
 
 label {
@@ -94,6 +97,20 @@ select {
 #tabs-nested-left-claim2 > div {
 	height: 30em;
 	overflow: auto;
+}
+
+table.dataTable thead,tfoot {
+	font-weight: bold;
+}
+
+table.dataTable {
+	border: 1px black solid;
+	margin-top: 1px;
+	margin-bottom: 1px;
+}
+
+td.numeric {
+	text-align: right;
 }
 
 </style>
@@ -209,7 +226,98 @@ header blablabla, menu stuff, messages ?
 				
 			</div>
 			<div id="tabs-nested-left-claim1-3">
-				<h3>Parts, Operations, Sublets</h3>
+				<h3>Parts, operations, sublets</h3>
+				<table id="parts" class="dataTable">
+					<thead>
+						<tr>
+							<td width="20%">Parts</td>
+							<td width="60%">Description</td>
+							<td width="10%" class="numeric">Qnty</td>
+							<td width="10%" class="numeric">Amount</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>BP01-18-119</td>
+							<td>SPARK PLUG BKR5E-11</td>
+							<td class="numeric">7</td>
+							<td class="numeric">17.64</td>
+						</tr>
+						<tr>
+							<td>BP02-18-119</td>
+							<td>SPARK PLUG K16PR-U11</td>
+							<td class="numeric">10</td>
+							<td class="numeric">19.00</td>
+						</tr>
+					</tbody>
+				</table>
+				<table id="operations" class="dataTable">
+					<thead>
+						<tr>
+							<td width="20%">Operations</td>
+							<td width="60%">Description</td>
+							<td width="10%" class="numeric">Hours</td>
+							<td width="10%" class="numeric">Amount</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>F0308D-R-X</td>
+							<td>NOZZLE HOLDER ASSEMBLY/FUEL INJECTOR AND/OR G</td>
+							<td class="numeric">3</td>
+							<td class="numeric">333.12</td>
+						</tr>
+					</tbody>
+				</table>
+				<table id="sublets" class="dataTable">
+					<thead>
+						<tr>
+							<td width="20%">Sublets</td>
+							<td width="60%">Description</td>
+							<td width="10%" class="numeric">Amount</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>2222 / 2012-04-22</td>
+							<td>Paint</td>
+							<td class="numeric">100.35</td>
+						</tr>
+					</tbody>
+				</table>
+				<table id="totals" class="dataTable">
+					<thead>
+						<tr>
+							<td width="20%"></td>
+							<td>Contribution by dealer and customer</td>
+							<td class="numeric">sum</td>
+						</tr>
+					</thead>
+					<tfoot>
+						<tr>
+							<td>Totals</td>
+							<td></td>
+							<td class="numeric">9000</td>
+						</tr>
+					</tfoot>
+					<tbody>
+						<tr>
+							<td>Parts</td>
+							<td></td>
+							<td class="numeric">2000</td>
+						</tr>
+						<tr>
+							<td>Operations</td>
+							<td></td>
+							<td class="numeric">3000</td>
+						</tr>
+						<tr>
+							<td>Sublets</td>
+							<td></td>
+							<td class="numeric">4000</td>
+						</tr>
+					</tbody>
+				</table>
 			</div>
 			<div id="tabs-nested-left-claim1-4">
 				<h3>Messages</h3>
@@ -298,6 +406,11 @@ $(document).ready(function() {
 		//alert($("#assembly option:selected").text());
 		updateSubassembly();
 	});
+	$(".dataTable").dataTable( {
+		"bPaginate": false,
+		"bInfo": false,
+		"bFilter": false
+	} );
 });
 </script>
 </body>
